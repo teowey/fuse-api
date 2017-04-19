@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server hostname="localhost" id="jboss-fuse-6.3.0.redhat-187" id-set="true" name="jboss-fuse-6.3.0.redhat-187 Runtime Server" runtime-id="jboss-fuse-6.3.0.redhat-187 Runtime" server-type="org.fusesource.ide.fuseesb.server.63" server-type-id="org.fusesource.ide.fuseesb.server.63" start-timeout="90" stop-timeout="45" timestamp="0" userId="admin"/>
+</servers>
