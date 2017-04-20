@@ -96,26 +96,26 @@
  <validation>
   <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="30" name="%0" offset="5185" path="%1"/>
-   <linked-el length="30" name="%2" offset="5185" path="%1"/>
-   <linked-el length="25" name="%3" offset="1311" path="%1"/>
-   <linked-el length="25" name="%4" offset="1311" path="%1"/>
-   <linked-el length="30" name="%5" offset="5185" path="%1"/>
-   <linked-el length="16" name="%6" offset="6077" path="%1"/>
-   <linked-el length="25" name="%7" offset="1311" path="%1"/>
+   <linked-el length="25" name="%0" offset="1311" path="%1"/>
+   <linked-el length="25" name="%2" offset="1311" path="%1"/>
+   <linked-el length="30" name="%3" offset="5185" path="%1"/>
+   <linked-el length="16" name="%4" offset="6077" path="%1"/>
+   <linked-el length="25" name="%5" offset="1311" path="%1"/>
+   <linked-el length="30" name="%6" offset="5185" path="%1"/>
+   <linked-el length="30" name="%7" offset="5185" path="%1"/>
    <linked-el length="25" name="%8" offset="1311" path="%1"/>
    <linked-el length="30" name="%9" offset="5185" path="%1"/>
    <linked-el length="16" name="%10" offset="6077" path="%1"/>
   </el>
  </validation>
  <aliases>
-  <alias path="jboss.fuse.bom" value="%3"/>
-  <alias path="jboss" value="%4"/>
-  <alias path="plugin" value="%5"/>
-  <alias path="camel" value="%6"/>
-  <alias path="jboss.fuse" value="%7"/>
-  <alias path="version.maven" value="%0"/>
-  <alias path="version" value="%2"/>
+  <alias path="jboss.fuse.bom" value="%0"/>
+  <alias path="jboss" value="%2"/>
+  <alias path="plugin" value="%3"/>
+  <alias path="camel" value="%4"/>
+  <alias path="jboss.fuse" value="%5"/>
+  <alias path="version.maven" value="%6"/>
+  <alias path="version" value="%7"/>
   <alias path="jboss.fuse.bom.version" value="%8"/>
   <alias path="bundle" value="%9"/>
   <alias path="/Fuse/pom.xml" value="%1"/>

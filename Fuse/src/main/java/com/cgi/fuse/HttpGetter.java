@@ -14,6 +14,17 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+/*
+ * File of a simple java application 
+ * that tests how to access an API.
+ * 
+ * 20/04
+ * Needs to be modified to work with 
+ * Spring DSL in the Fuse integration 
+ * project "fuse-api".
+ * 
+ */
+
 public class HttpGetter {
 
 	public static void main(String[] args) throws Exception {
@@ -26,9 +37,7 @@ public class HttpGetter {
 		Document dom = HttpGetter.loadXMLFromString(sXML);
 		Element el = dom.getDocumentElement();
 		
-		System.out.println("Airport: " + HttpGetter.getTextValue(el, "stationName"));
-		System.out.println("The temperature now is: " + HttpGetter.getTextValue(el, "temperature") + " Celsius");
-		System.out.println("Weather conditions: " + HttpGetter.getTextValue(el, "clouds"));
+		
 	}
 
 	private static String getTextValue(Element ele, String tagName) {

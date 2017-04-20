@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd      http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <route id="api2fuse">
+            <!-- Input from Rest API -->           
+            <from id="_from1" uri="restlet:http:host:80/data.stockholm.se/set/Befolkning/Befforandr//uriPattern" />
+            <!-- Process the XML from the Rest API -->
+            <process id="_process1" ref="HttpGetter" />
+            <!-- Output to a text file (TESTING the route) -->
+            <to id="_to1" uri="file:C:\Users\orlowweyt\Desktop" />
+        </route>
+    </camelContext>
+    <bean class="org.restlet.Component" id="RestletComponent"/>
+    <bean class="org.apache.camel.component.restlet.RestletComponent" id="RestletComponentService">
+        <constructor-arg index="0">
+            <ref bean="RestletComponent"/>
+        </constructor-arg>
+    </bean>
+    <bean class="org.cgi.fuse.HttpGetter" id="HttpGetter"/>
+</beans>
