@@ -1,8 +1,9 @@
 eclipse.preferences.version=1
-org.jboss.ide.eclipse.as.ui.defaultWebServer=jboss-fuse-6.3.0.redhat-187
+org.jboss.ide.eclipse.as.ui.defaultWebServer=JBoss Fuse 6.0 Runtime Server
 org.jboss.ide.eclipse.as.ui.preferences.disabled.automatic.server.view=true
 org.jboss.ide.eclipse.as.ui.preferences.enabledDecorators.1=true
-org.jboss.ide.eclipse.as.ui.wizards.LAST_RUNTIME_CREATED=jboss-fuse-6.3.0.redhat-187 Runtime
-org.jboss.ide.eclipse.as.ui.wizards.LAST_RUNTIME_TYPE_CREATED=org.fusesource.ide.fuseesb.runtime.63
-org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_CREATED=jboss-fuse-6.3.0.redhat-187
-org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_TYPE_CREATED=org.fusesource.ide.fuseesb.server.63
+org.jboss.ide.eclipse.as.ui.preferences.runtime.last.type.org.jboss.ide.eclipse.as.runtime.eap.70=C\:\\Users\\orlowweyt\\Downloads\\jboss-eap-7.0
+org.jboss.ide.eclipse.as.ui.wizards.LAST_RUNTIME_CREATED=JBoss EAP 7.x Runtime
+org.jboss.ide.eclipse.as.ui.wizards.LAST_RUNTIME_TYPE_CREATED=org.jboss.ide.eclipse.as.runtime.eap.70
+org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_CREATED=Red Hat JBoss EAP 7.x1492684436753
+org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_TYPE_CREATED=org.jboss.ide.eclipse.as.eap.70

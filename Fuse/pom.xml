@@ -2,12 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mycompany</groupId>
+  <groupId>com.cgi.fuse</groupId>
   <artifactId>camel-spring</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Camel Spring Quickstart</name>
-  <description>Empty Camel Spring Example</description>
+  <name>Fuse API</name>
+  <description>Fuse integration for API</description>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -17,10 +17,11 @@
   </licenses>
   <properties>
     <camel.version>2.17.0.redhat-630187</camel.version>
-    <version.maven-bundle-plugin>3.2.0</version.maven-bundle-plugin>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <version.maven-bundle-plugin>3.2.0</version.maven-bundle-plugin>
     <jboss.fuse.bom.version>6.3.0.redhat-187</jboss.fuse.bom.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <restlet.version>2.1.7</restlet.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -43,6 +44,14 @@
       <artifactId>camel-spring</artifactId>
     </dependency>
     <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-stream</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
@@ -58,6 +67,31 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test-spring</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
+      <version>5.11.0.redhat-630187</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jms</artifactId>
+      <version>2.17.0.redhat-630187</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-cxf</artifactId>
+      <version>2.17.0.redhat-630187</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-restlet</artifactId>
+      <version>2.17.0.redhat-630187</version>
+    </dependency>
+    <dependency>
+  <groupId>org.restlet.jee</groupId>
+  <artifactId>org.restlet.ext.spring</artifactId>
+  <version>2.1.7</version>
+</dependency>
   </dependencies>
   <repositories>
     <repository>
@@ -84,6 +118,11 @@
       <name>Red Hat GA Repository</name>
       <url>https://maven.repository.redhat.com/ga</url>
     </repository>
+    <repository>  
+   <id>maven-restlet</id>  
+   <name>Public online Restlet repository</name>  
+   <url>http://maven.restlet.org</url>  
+</repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
@@ -122,7 +161,9 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>Fuse</Bundle-SymbolicName>
-            <Bundle-Name>Empty Camel Spring Example [Fuse]</Bundle-Name></instructions></configuration>
+            <Bundle-Name>Empty Camel Spring Example [Fuse]</Bundle-Name>
+          </instructions>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
