@@ -16,5 +16,4 @@
             <ref bean="RestletComponent"/>
         </constructor-arg>
     </bean>
-    <bean class="org.cgi.fuse.HttpGetter" id="HttpGetter"/>
 </beans>

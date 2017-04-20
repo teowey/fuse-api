@@ -96,38 +96,30 @@
  <validation>
   <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="60" name="%0" offset="1548" path="%1"/>
-   <linked-el length="30" name="%2" offset="5185" path="%3"/>
-   <linked-el length="30" name="%4" offset="5185" path="%3"/>
-   <linked-el length="60" name="%5" offset="1548" path="%1"/>
-   <linked-el length="25" name="%6" offset="1311" path="%3"/>
-   <linked-el length="25" name="%7" offset="1311" path="%3"/>
-   <linked-el length="30" name="%8" offset="5185" path="%3"/>
-   <linked-el length="16" name="%9" offset="6077" path="%3"/>
-   <linked-el length="25" name="%10" offset="1311" path="%3"/>
-   <linked-el length="60" name="%11" offset="1548" path="%1"/>
-   <linked-el length="25" name="%12" offset="1311" path="%3"/>
-   <linked-el length="30" name="%13" offset="5185" path="%3"/>
-   <linked-el length="16" name="%14" offset="6077" path="%3"/>
+   <linked-el length="30" name="%0" offset="5185" path="%1"/>
+   <linked-el length="30" name="%2" offset="5185" path="%1"/>
+   <linked-el length="25" name="%3" offset="1311" path="%1"/>
+   <linked-el length="25" name="%4" offset="1311" path="%1"/>
+   <linked-el length="30" name="%5" offset="5185" path="%1"/>
+   <linked-el length="16" name="%6" offset="6077" path="%1"/>
+   <linked-el length="25" name="%7" offset="1311" path="%1"/>
+   <linked-el length="25" name="%8" offset="1311" path="%1"/>
+   <linked-el length="30" name="%9" offset="5185" path="%1"/>
+   <linked-el length="16" name="%10" offset="6077" path="%1"/>
   </el>
  </validation>
  <aliases>
-  <alias path="header.CamelHttpMethod" value="%0"/>
-  <alias path="version.maven" value="%2"/>
-  <alias
-   path="/Fuse/src/main/resources/META-INF/spring/camel-context.xml" value="%1"/>
-  <alias path="version" value="%4"/>
-  <alias path="/Fuse/pom.xml" value="%3"/>
-  <alias path="header.id" value="%5"/>
-  <alias path="jboss.fuse.bom" value="%6"/>
-  <alias path="jboss" value="%7"/>
-  <alias path="plugin" value="%8"/>
-  <alias path="camel" value="%9"/>
-  <alias path="jboss.fuse" value="%10"/>
-  <alias path="header" value="%11"/>
-  <alias path="jboss.fuse.bom.version" value="%12"/>
-  <alias path="bundle" value="%13"/>
-  <alias path="camel.version" value="%14"/>
+  <alias path="jboss.fuse.bom" value="%3"/>
+  <alias path="jboss" value="%4"/>
+  <alias path="plugin" value="%5"/>
+  <alias path="camel" value="%6"/>
+  <alias path="jboss.fuse" value="%7"/>
+  <alias path="version.maven" value="%0"/>
+  <alias path="version" value="%2"/>
+  <alias path="jboss.fuse.bom.version" value="%8"/>
+  <alias path="bundle" value="%9"/>
+  <alias path="/Fuse/pom.xml" value="%1"/>
+  <alias path="camel.version" value="%10"/>
  </aliases>
  <includes/>
  <uris/>

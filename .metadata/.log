@@ -4904,3 +4904,42 @@ org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 3; The markup in th
 	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:49:28.013
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:51:49.356
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:52:34.684
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:59:31.550
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:59:49.537
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 13:59:56.038
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 14:00:14.778
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 14:00:17.910
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-20 14:14:22.516
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-20 14:14:22.517
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-20 14:14:22.652
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-20 14:14:22.653
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.fusesource.ide.camel.model.service.core 2 0 2017-04-20 14:15:16.558
+!MESSAGE ParseAttributes: Unsupported EIP will be ignored: camelContext
