@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route customId="false" id="route1">
+        <from uri="file:C:/inbox?noop=true"/>
+        <to uri="file:C:/outbox" id="to1"/>
+    </route>
+</routes>

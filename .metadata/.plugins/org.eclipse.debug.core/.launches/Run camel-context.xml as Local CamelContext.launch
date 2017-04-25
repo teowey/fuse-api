@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.fusesource.ide.launcher.camelContext">
+<stringAttribute key="M2_GOALS" value="clean package org.apache.camel:camel-maven-plugin:run"/>
+<booleanAttribute key="M2_SKIP_TESTS" value="false"/>
+<booleanAttribute key="org.eclipse.debug.core.ATTR_REFRESH_RECURSIVE" value="true"/>
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${project}"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Fuse"/>
+<listEntry value="/Fuse/src/main/resources/META-INF/spring/camel-context.xml"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Fuse"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\Users\orlowweyt\Desktop\GitHub\fuse-api\Fuse"/>
+<stringAttribute key="org.fusesource.ide.launcher.debug.jmx.uri" value="service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi/camel"/>
+<stringAttribute key="rider.file" value="file:/C:/Users/orlowweyt/Desktop/GitHub/fuse-api/Fuse/src/main/resources/META-INF/spring/camel-context.xml"/>
+</launchConfiguration>

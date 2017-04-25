@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route customId="false" id="route2">
+        <from uri="file:src/data?noop=true"/>
+        <choice id="choice1">
+            <when id="when1">
+                <xpath>/person/city = 'London'</xpath>
+                <log message="UK message" id="log1"/>
+                <to uri="file:target/messages/uk" id="to2"/>
+            </when>
+            <otherwise id="otherwise1">
+                <log message="Other message" id="log2"/>
+                <to uri="file:target/messages/others" id="to3"/>
+            </otherwise>
+        </choice>
+    </route>
+</routes>

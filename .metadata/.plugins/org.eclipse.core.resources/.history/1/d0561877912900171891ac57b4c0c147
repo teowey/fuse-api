@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd      http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <camelContext id="camel-fuse-api" xmlns="http://camel.apache.org/schema/spring">
+        <route id="api2fuse">
+            <!-- Input from Rest API using "to" endpoint  -->
+            <!-- Process the XML from the Rest API -->
+            <!-- Output to a text file (TESTING the route) using "from" endpoint -->
+            <from id="startRoute" uri="file://C:/Users/orlowweyt/Desktop/In" />
+            <to url="restlet:http:80://data.stockholm.se/set/Befolkning/Befforandr/?apikey=F0C2K0J9J000F19E1CIE4CJ7Z804QFB0?restletMethod=GET" />
+            <to id="_to1" uri="file://C:/Users/orlowweyt/Desktop/?fileName=test_new_xml.txt" />
+            <log id="_log1" message="XML was copied to the local folder in a .txt file" />
+        </route>
+    </camelContext>
+    <bean class="org.restlet.Component" id="RestletComponent"/>
+    <bean class="org.apache.camel.component.restlet.RestletComponent" id="RestletComponentService">
+        <constructor-arg index="0">
+            <ref bean="RestletComponent"/>
+        </constructor-arg>
+    </bean>
+</beans>
