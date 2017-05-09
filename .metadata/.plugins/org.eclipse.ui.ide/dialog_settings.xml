@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\orlowweyt\Downloads\Apache Camel\Camel\Camel_in_Action\camelinaction-master\camelinaction-master\chapter8\aggregator"/>
+	</list>
 	<list key="installedFeatures">
 		<item value="com.android.ide.eclipse.adt.feature:23.0.7.2120684"/>
 		<item value="com.android.ide.eclipse.ddms.feature:23.0.7.2120684"/>
@@ -211,5 +214,9 @@
 		<item value="421" key="DIALOG_HEIGHT"/>
 		<item value="629" key="DIALOG_X_ORIGIN"/>
 		<item value="296" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1492605675396" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 </section>

@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.camel.RoutesBuilder"/>
+<fullyQualifiedTypeName name="org.apache.activemq.camel.component.ActiveMQComponent"/>
+<fullyQualifiedTypeName name="org.apache.camel.CamelExecutionException"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.apache.camel.model.rest.RestBindingMode"/>
+<fullyQualifiedTypeName name="org.apache.camel.Processor"/>
+<fullyQualifiedTypeName name="org.apache.camel.ProducerTemplate"/>
+<fullyQualifiedTypeName name="org.apache.camel.util.ExchangeHelper"/>
+<fullyQualifiedTypeName name="org.apache.camel.Exchange"/>
+<fullyQualifiedTypeName name="org.apache.camel.impl.DefaultExchange"/>
+<fullyQualifiedTypeName name="org.apache.camel.CamelContext"/>
+<fullyQualifiedTypeName name="org.apache.camel.impl.DefaultCamelContext"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="org.apache.camel.builder.RouteBuilder"/>
+<fullyQualifiedTypeName name="com.cgi.fuse.StringAggregationStrategy"/>
+</qualifiedTypeNameHistroy>

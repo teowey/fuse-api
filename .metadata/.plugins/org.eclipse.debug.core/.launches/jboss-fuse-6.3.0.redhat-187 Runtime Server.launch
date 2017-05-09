@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.fusesource.ide.server.fuseesb6x.launch">
+<booleanAttribute key="DEFAULTS_SET" value="true"/>
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/jboss-fuse-6.3.0.redhat-187/etc&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/jboss-fuse-6.3.0.redhat-187/lib/bin/karaf-client.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/jboss-fuse-6.3.0.redhat-187/lib/karaf-jaas-boot.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/jboss-fuse-6.3.0.redhat-187/lib/karaf-jmx-boot.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/jboss-fuse-6.3.0.redhat-187/lib/karaf.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_121"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.apache.karaf.main.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-server -Xms128M -Xmx512M -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass -XX:PermSize=16M -XX:MaxPermSize=128M -Dcom.sun.management.jmxremote -Djava.endorsed.dirs=&quot;C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed;C:\Program Files\Java\jdk1.8.0_121\lib\endorsed;C:\jboss-fuse-6.3.0.redhat-187\lib\endorsed&quot; -Djava.ext.dirs=&quot;C:\Program Files\Java\jdk1.8.0_121\jre\lib\ext;C:\Program Files\Java\jdk1.8.0_121\lib\ext;C:\jboss-fuse-6.3.0.redhat-187\lib\ext&quot; -Dkaraf.instances=&quot;C:\jboss-fuse-6.3.0.redhat-187\instances&quot; -Dkaraf.home=&quot;C:\jboss-fuse-6.3.0.redhat-187&quot; -Dkaraf.base=&quot;C:\jboss-fuse-6.3.0.redhat-187&quot; -Dkaraf.data=&quot;C:\jboss-fuse-6.3.0.redhat-187\data&quot; -Dkaraf.etc=&quot;C:\jboss-fuse-6.3.0.redhat-187\etc&quot; -Djava.io.tmpdir=&quot;C:\jboss-fuse-6.3.0.redhat-187\data\tmp&quot; -Djava.util.logging.config.file=&quot;C:\jboss-fuse-6.3.0.redhat-187\etc\java.util.logging.properties&quot; -Dkaraf.startLocalConsole=false -Dkaraf.startRemoteShell=true "/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\jboss-fuse-6.3.0.redhat-187"/>
+<stringAttribute key="server-id" value="jboss-fuse-6.3.0.redhat-187 Runtime Server"/>
+</launchConfiguration>

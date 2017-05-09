@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1492697679235
+# List of external plug-in models previously loaded. Timestamp: 1493984313761
 file:/C:/Users/orlowweyt/devstudio/studio/plugins/com.android.ide.eclipse.adt_23.0.7.2120684.jar
 file:/C:/Users/orlowweyt/devstudio/studio/plugins/com.android.ide.eclipse.base_23.0.7.2120684.jar
 file:/C:/Users/orlowweyt/devstudio/studio/plugins/com.android.ide.eclipse.ddms_23.0.7.2120684.jar

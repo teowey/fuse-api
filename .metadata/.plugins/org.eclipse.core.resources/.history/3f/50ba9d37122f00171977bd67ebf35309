@@ -1,0 +1,48 @@
+package com.cgi.fuse;
+
+import org.apache.activemq.camel.component.ActiveMQComponent;
+import org.apache.camel.CamelContext;
+import org.apache.camel.ProducerTemplate;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+
+public class ExternalAPIRouter {
+
+	public static void main(String[] args) throws Exception {
+		
+		// Create the camel context for the REST API routing in Fuse
+		CamelContext contextFuseAPI = new DefaultCamelContext();
+		
+		try {		
+			// Add a ActiveMQcomponent and specify the brokerUR to connect to ActiveMQ 
+			contextFuseAPI.addComponent("activeMQ", ActiveMQComponent.activeMQComponent("vm://localhost?broker.persistent=false"));
+			
+			
+			// Start the route inside the context to listen to the ActiveMQ
+			contextFuseAPI.addRoutes(new RouteBuilder() {
+				
+				@Override
+				public void configure() throws Exception {
+					from("restlet:http://www.annonsera.se/api/ads/get.xml?category=fordon&count=1?restletMethods")
+					
+					from("activemq:topic:xmlAPI")
+					//.to("restlet:http://www.annonsera.se/api/ads/get.xml?category=fordon&count=1?restletMethods")					
+					.to("file://C:/Users/orlowweyt/Desktop/?fileName=test_new_xml.xml")
+					.log("XML was copied to the local folder in a .txt file");
+					
+				}
+			});
+			
+			// Create a Producer template as a client API
+			ProducerTemplate templateFuseAPI = contextFuseAPI.createProducerTemplate();
+			templateFuseAPI.send()
+			
+			contextFuseAPI.start();
+			//templateFuseAPI
+			
+			Thread.sleep(10000);
+		} finally {	
+			contextFuseAPI.stop();
+		}
+	}
+}

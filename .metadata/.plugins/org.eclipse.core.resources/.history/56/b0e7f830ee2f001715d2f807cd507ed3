@@ -1,0 +1,49 @@
+package com.cgi.fuse;
+
+import java.io.File;
+
+import org.apache.activemq.camel.component.ActiveMQComponent;
+import org.apache.camel.CamelContext;
+import org.apache.camel.CamelExecutionException;
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.ProducerTemplate;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.model.rest.RestBindingMode;
+
+public class ExternalAPIRouter {
+
+	public static void main(String[] args) throws Exception {
+
+		// Create the camel context for the REST API routing in Fuse
+		CamelContext contextFuseAPI = new DefaultCamelContext();
+
+		// Start the route inside the context to listen to the ActiveMQ
+		contextFuseAPI.addRoutes(new RouteBuilder() {
+
+			@Override
+			public void configure() throws Exception {
+
+				
+				from("direct:getRestFromExternalService")
+				.to("http://gturnquist-quoters.cfapps.io/api/random")
+				.process(new Processor() {
+					
+					@Override
+					public void process(Exchange exchange) throws Exception {
+
+						String jsonString = exchange.getIn().getBody(String.class);
+						
+						System.out.println(jsonString);
+					}
+				});
+				
+							}
+		});
+
+		contextFuseAPI.start();
+		Thread.sleep(5000);
+		contextFuseAPI.stop();
+	}
+}

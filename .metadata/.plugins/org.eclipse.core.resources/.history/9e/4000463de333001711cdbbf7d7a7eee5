@@ -1,0 +1,38 @@
+package com.cgi.fuse;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.builder.RouteBuilder;
+
+public class FuseAPIRoute extends RouteBuilder {
+
+	@Override
+	public void configure() throws Exception {
+		/*
+		from("direct:getRestFromExternalService")
+			.setHeader(Exchange.HTTP_METHOD, simple("GET"))
+			.to("http://gturnquist-quoters.cfapps.io/api/random");
+			//.to("direct:result");
+		from("direct:getAnotherRest")
+			.setHeader(Exchange.HTTP_METHOD, simple("GET"))
+			.to("http://maps.googleapis.com/maps/api/geocode/json?address=stockholm,sweden");
+			//.to("direct:result");
+		
+		from("direct:getRestFromExternalService")
+			.aggregate(constant(true), new StringAggregationStrategy()).completionSize(2)
+			.log("Sending out concat APIs")
+			.to("direct:aggregated");
+		 */
+		
+		/*
+		from("direct:getRestFromExternalService")
+		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
+		.to("http://gturnquist-quoters.cfapps.io/api/random");
+		*/
+		
+		from("jetty:http://gturnquist-quoters.cfapps.io/api/random")
+		.removeHeaders("CamelHttp*")
+		.setFaultHeader(Exchange.HTTP_METHOD, constant("GET"))
+		
+		
+	}
+}

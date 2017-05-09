@@ -1,0 +1,60 @@
+package com.cgi.fuse;
+
+import java.io.File;
+
+import org.apache.activemq.camel.component.ActiveMQComponent;
+import org.apache.camel.CamelContext;
+import org.apache.camel.CamelExecutionException;
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.ProducerTemplate;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.model.rest.RestBindingMode;
+
+public class ExternalAPIRouter {
+
+	public static void main(String[] args) throws Exception {
+		
+		// Create the camel context for the REST API routing in Fuse
+		CamelContext contextFuseAPI = new DefaultCamelContext();
+		
+		//try {		
+			// Add a ActiveMQcomponent and specify the brokerUR to connect to ActiveMQ 
+			//contextFuseAPI.addComponent("activeMQ", ActiveMQComponent.activeMQComponent("vm://localhost?broker.persistent=false"));
+			
+			
+			// Start the route inside the context to listen to the ActiveMQ
+			contextFuseAPI.addRoutes(new RouteBuilder() {
+				
+				@Override
+				public void configure() throws Exception {
+					
+					// configure to use restlet on localhost with the given port
+					// and enable auto binding mode
+					restConfiguration().component("restlet").host("localhost").bindingMode(RestBindingMode.auto);
+					 
+					// use the rest DSL to define the rest services
+					rest("/users/")
+					    .post().type(UserPojo.class
+					rest("http://gturnquist-quoters.cfapps.io/api")
+						.consumes("application/json").produces("application/json")
+						
+						.get("/random").to("file://C:/Users/orlowweyt/Desktop/?fileName=the_random_json.json");
+								
+				}
+			});
+			
+			// Create a ProducerTemplate to access direct endpoint 
+			//ProducerTemplate templateFuseAPI = contextFuseAPI.createProducerTemplate();
+			
+			// Use the request() method to invoke the API website and create a new file
+			//File newXML = templateFuseAPI.requestBody("http://www.annonsera.se/api/ads/get.xml", null, File.class);
+			
+			contextFuseAPI.start();	
+			Thread.sleep(5000);
+		//} finally {	
+			contextFuseAPI.stop();
+		//}
+	}
+}

@@ -13,4 +13,13 @@
 	</section>
 	<section name="OverviewSectionTreeExpansionState">
 	</section>
+	<section name="OverviewSectionTreeExpansionState47060">
+		<item value="false" key="Runtime"/>
+		<item value="false" key="Class loading"/>
+		<item value="false" key="Compilation"/>
+		<item value="false" key="Memory"/>
+		<item value="false" key="Garbage collector"/>
+		<item value="false" key="Operating system"/>
+		<item value="false" key="Thread"/>
+	</section>
 </section>

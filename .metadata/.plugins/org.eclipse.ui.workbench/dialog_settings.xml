@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="-35" key="DIALOG_X_ORIGIN"/>
-		<item value="-137" key="DIALOG_Y_ORIGIN"/>
+		<item value="229" key="DIALOG_X_ORIGIN"/>
+		<item value="125" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogHeight"/>
-		<item value="-1" key="dialogWidth"/>
+		<item value="563" key="dialogHeight"/>
+		<item value="921" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -19,15 +19,18 @@
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.jboss.tools.cdi.ui"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.jst.ejb.ui"/>
 			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.debug.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.emf.codegen.ui.JETNewWizards"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
 			<item value="org.fusesource.ide.newwizards"/>
-			<item value="org.jboss.ide.eclipse.ui.wizards"/>
 			<item value="org.jboss.tools.jst.web"/>
-			<item value="org.switchyard.tools.ui"/>
-			<item value="org.testng.eclipse"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
+			<item value="org.jboss.tools.jst.web/org.jboss.tools.portlet"/>
+			<item value="org.jboss.tools.central.ui.wizard.category"/>
 		</list>
 	</section>
 </section>

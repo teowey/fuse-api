@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=Fuse/C:\/Users\/orlowweyt\/.m2\/repository\/org\/apache\/camel\/camel-core\/2.17.0.redhat-630187\/camel-core-2.17.0.redhat-630187.jar&lt;org.apache.camel.processor.aggregate(AggregationStrategy.class[AggregationStrategy" modifiers="1537" timestamp="1492612050927"/>
+<typeInfo handle="=Fuse/C:\/Users\/orlowweyt\/.m2\/repository\/org\/apache\/camel\/camel-core\/2.17.0.redhat-630187\/camel-core-2.17.0.redhat-630187.jar&lt;org.apache.camel.processor.aggregate(AggregateProcessorStatistics.class[AggregateProcessorStatistics" modifiers="1537" timestamp="1492612050927"/>
+<typeInfo handle="=Fuse/C:\/Users\/orlowweyt\/.m2\/repository\/org\/apache\/activemq\/activemq-all\/5.13.2\/activemq-all-5.13.2.jar&lt;org.apache.camel.processor.aggregate(AggregateProcessorStatistics.class[AggregateProcessorStatistics" modifiers="1537" timestamp="1493713436290"/>
+</typeInfoHistroy>

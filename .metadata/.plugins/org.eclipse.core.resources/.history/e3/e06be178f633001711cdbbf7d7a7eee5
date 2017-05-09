@@ -1,0 +1,18 @@
+package com.cgi.fuse;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.builder.RouteBuilder;
+
+public class FuseAPIRoute extends RouteBuilder {
+
+	@Override
+	public void configure() throws Exception {
+		
+		
+		from("direct:getRestFromExternalService")
+		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
+		.to("jetty:http://gturnquist-quoters.cfapps.io/api/random")
+		.to("file:src/data?noop=true&fileName=test_new_api.json");
+		
+	}
+}

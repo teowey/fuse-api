@@ -1,0 +1,87 @@
+package com.cgi.fuse;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.processor.aggregate.AggregateProcessorStatistics;
+import org.apache.camel.processor.aggregate.AggregationStrategy;
+
+public class StringAggregationStrategy implements AggregationStrategy {
+
+	@Override
+	public long getCompletedByBatchConsumer() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedByForce() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedByInterval() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedByPredicate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedBySize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedByStrategy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getCompletedByTimeout() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getTotalCompleted() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long getTotalIn() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isStatisticsEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void reset() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setStatisticsEnabled(boolean arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Exchange aggregate(Exchange arg0, Exchange arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

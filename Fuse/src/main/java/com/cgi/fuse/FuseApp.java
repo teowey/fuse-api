@@ -1,8 +1,12 @@
 package com.cgi.fuse;
 
+import javax.jms.ConnectionFactory;
+
+import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
+import org.apache.camel.component.jms.JmsComponent;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.impl.DefaultExchange;
 import org.apache.camel.util.ExchangeHelper;
@@ -14,13 +18,19 @@ public class FuseApp {
 		// Create the camel context for the REST API routing in Fuse
 		CamelContext contextFuseAPI = new DefaultCamelContext();
 		
+		// connect to embedded ActiveMQ JMS broker
+        ConnectionFactory connectionFactory = 
+            new ActiveMQConnectionFactory("vm://localhost");
+        contextFuseAPI.addComponent("jms",
+            JmsComponent.jmsComponentAutoAcknowledge(connectionFactory));
+        
 		// Start the route inside the context to listen to the ActiveMQ
 		contextFuseAPI.addRoutes(new FuseAPIRoute());
 		
 		// Start context lifecycle
 		contextFuseAPI.start();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		// Create a producer template to request body of the message
 		ProducerTemplate template = contextFuseAPI.createProducerTemplate();
@@ -29,9 +39,9 @@ public class FuseApp {
 		//Object result = template.requestBody("direct:getRestFromExternalService", null, String.class);
 		//template.sendBody("direct:output", result);
 		
-		Object test = template.requestBody("direct:getRestFromExternalService", null, String.class);
+		template.requestBody("direct:getRestFromExternalService", null, String.class);
         //System.out.println("Response : " + test);		
-		Object test2 = template.requestBody("direct:getAnotherRestFromExternalService", null, String.class);
+		template.requestBody("direct:getAnotherRestFromExternalService", null, String.class);
 
 		contextFuseAPI.stop();
 		

@@ -1,0 +1,15 @@
+package com.cgi.fuse;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.processor.aggregate.AggregateProcessorStatistics;
+import org.apache.camel.processor.aggregate.AggregationStrategy;
+
+public class StringAggregationStrategy implements AggregationStrategy {
+
+	@Override
+	public Exchange aggregate(Exchange arg0, Exchange arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

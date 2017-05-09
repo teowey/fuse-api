@@ -1,0 +1,13 @@
+package com.cgi.fuse;
+
+import org.apache.camel.CamelContext;
+import org.apache.camel.RoutesBuilder;
+
+public class FuseAPIRoute extends RouteBuilder {
+
+	@Override
+	public void configure() throws Exception {
+
+	}
+
+}
