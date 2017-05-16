@@ -24,25 +24,32 @@ public class FuseApp {
         contextFuseAPI.addComponent("jms",
             JmsComponent.jmsComponentAutoAcknowledge(connectionFactory));
         
-		// Start the route inside the context to listen to the ActiveMQ
+		// Start the route created in FuseAPIRoute.java
 		contextFuseAPI.addRoutes(new FuseAPIRoute());
 		
 		// Start context lifecycle
-		contextFuseAPI.start();
-		
+		contextFuseAPI.start();		
 		Thread.sleep(5000);
 		
-		// Create a producer template to request body of the message
+		// Create a producer template
+		// It acts as a consumer to request body of the message
 		ProducerTemplate template = contextFuseAPI.createProducerTemplate();
-		
-		// Request the body and converts it to a string and outputs it in the console
-		//Object result = template.requestBody("direct:getRestFromExternalService", null, String.class);
-		//template.sendBody("direct:output", result);
-		
-		template.requestBody("direct:getRestFromExternalService", null, String.class);
-        //System.out.println("Response : " + test);		
-		template.requestBody("direct:getAnotherRestFromExternalService", null, String.class);
+					
+		Object externalAPI1 = template.requestBody("direct:getRestFromExternalService", null, String.class);
+		Object externalAPI2 = template.requestBody("direct:getAnotherRestFromExternalService", null, String.class);
 
+		// Create an exchange object to manipulate the messages
+		Exchange exchange = new DefaultExchange(contextFuseAPI);
+		
+		// Convert the files with API to string files
+		String str_externalAPI1 = ExchangeHelper.convertToType(exchange, String.class, externalAPI1);
+		String str_externalAPI2 = ExchangeHelper.convertToType(exchange, String.class, externalAPI2);
+		
+		// Send the converted APIs to the 'mergeAPI' route to be merged into a file.
+		template.sendBodyAndHeader("direct:mergeAPI", str_externalAPI1, "ID", 1);
+		template.sendBodyAndHeader("direct:mergeAPI", str_externalAPI2, "ID", 1);
+		
+		
 		contextFuseAPI.stop();
 		
 		

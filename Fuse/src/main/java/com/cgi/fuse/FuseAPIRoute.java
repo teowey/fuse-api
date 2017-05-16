@@ -5,19 +5,27 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
+/*
+ * 
+ *  - Camel Routes to process APIs  
+ *  	 
+ *  This file is a collection of Camel routes.
+ *  The routes included in this file have different purposes 
+ *  in the processing of the APIs. 
+ *   
+ */
+
 public class FuseAPIRoute extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {		
-		
+	
 		/*
-		 *  - Camel Routes to retrieve APIs  	 
-		 * 
 		 * 	An endpoint is created for each Route using the direct: component 
 		 *  It gets the information from the external http using Jetty
 		 *  Finally, it stores the API in memory as a JSON file.  
 		 * 
-		 */
+		 */		
 		
 		// 1st API route		
 		from("direct:getRestFromExternalService")
@@ -31,10 +39,10 @@ public class FuseAPIRoute extends RouteBuilder {
 		.removeHeaders("*")
 		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
 		.to("jetty:http://maps.googleapis.com/maps/api/geocode/json?address=stockholm,sweden")
-		.to("file:src/data?noop=true&fileName=geoapi.json");		
-			
+		.to("file:src/data?noop=true&fileName=geoapi.json");
+	
 		/*
-		 *  - Filter test to organize different APIs 
+		 *  - Filter to organize different APIs 
 		 * 
 		 *  Based on the Camel in Action example OrderRouter
 		 *  Just creates a route from the memory folder to
@@ -50,6 +58,7 @@ public class FuseAPIRoute extends RouteBuilder {
 		.choice()
 		.when(header("CamelFileName").endsWith(".json"))
 				.to("jms:jsonOrders")
+				
 		.when(header("CamelFileName").endsWith(".xml"))
                  .to("jms:xmlOrders");
         
@@ -58,7 +67,25 @@ public class FuseAPIRoute extends RouteBuilder {
 			public void process(Exchange exchange) throws Exception {
 				System.out.println("Received JSON order: "
 						+ exchange.getIn().getHeader("CamelFileName"));
+				
 			}
 		});
+		
+		/*
+		 *	- Use a route to merge APIs 
+		 * 
+		 *  This is a route specific to concatenating 
+		 *  2 different APIs into 1 single file.
+		 *  The FuseApp.java will call this route by
+		 *  the name 'mergeAPI' and process it using methods
+		 *  from the 'template'. 
+		 * 
+		 * 
+		 */
+		
+		// create a route to concatenate 2 different APIs
+		from("direct:mergeAPI")
+		.aggregate(header("ID"), new StringAggregationStrategy()).completionSize(2)
+		.to("file:src/data?noop=true&fileName=apimerge.json");
 	}
 }
