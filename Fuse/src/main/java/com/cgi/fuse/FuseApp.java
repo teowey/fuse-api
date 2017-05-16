@@ -15,39 +15,46 @@ public class FuseApp {
 	
 	public static void main(String[] args) throws Exception {
 		
-		// Create the camel context for the REST API routing in Fuse
+		// Create the camel context for the REST API routing in Fuse.
 		CamelContext contextFuseAPI = new DefaultCamelContext();
 		
-		// connect to embedded ActiveMQ JMS broker
+		// connect to embedded ActiveMQ JMS broker.
         ConnectionFactory connectionFactory = 
             new ActiveMQConnectionFactory("vm://localhost");
         contextFuseAPI.addComponent("jms",
             JmsComponent.jmsComponentAutoAcknowledge(connectionFactory));
         
-		// Start the route created in FuseAPIRoute.java
+		// Start the route created in FuseAPIRoute.java.
 		contextFuseAPI.addRoutes(new FuseAPIRoute());
 		
-		// Start context lifecycle
+		// Start context lifecycle.
 		contextFuseAPI.start();		
 		Thread.sleep(5000);
 		
-		// Create a producer template
-		// It acts as a consumer to request body of the message
+		
+		
+		// Create a producer template.
+		// It acts as a consumer to request body of the message.
 		ProducerTemplate template = contextFuseAPI.createProducerTemplate();
-					
-		Object externalAPI1 = template.requestBody("direct:getRestFromExternalService", null, String.class);
-		Object externalAPI2 = template.requestBody("direct:getAnotherRestFromExternalService", null, String.class);
+		
+		String quoteAPIEndpoint = "direct:quoteAPI";	// Get Rest from external service.
+		String mapsAPIEndpoint = "direct:mapsAPI";		// Get Rest from another external service.
+		
+		Object externalAPI1 = template.requestBody(quoteAPIEndpoint, null, String.class);
+		Object externalAPI2 = template.requestBody(mapsAPIEndpoint, null, String.class);
 
-		// Create an exchange object to manipulate the messages
+		// Create an exchange object to manipulate the messages.
 		Exchange exchange = new DefaultExchange(contextFuseAPI);
 		
 		// Convert the files with API to string files
 		String str_externalAPI1 = ExchangeHelper.convertToType(exchange, String.class, externalAPI1);
 		String str_externalAPI2 = ExchangeHelper.convertToType(exchange, String.class, externalAPI2);
 		
+		String mergeAPIEndpoint = "direct:mergeAPI";	// Access the merge route.
+		
 		// Send the converted APIs to the 'mergeAPI' route to be merged into a file.
-		template.sendBodyAndHeader("direct:mergeAPI", str_externalAPI1, "ID", 1);
-		template.sendBodyAndHeader("direct:mergeAPI", str_externalAPI2, "ID", 1);
+		template.sendBodyAndHeader(mergeAPIEndpoint, str_externalAPI1, "ID", 1);
+		template.sendBodyAndHeader(mergeAPIEndpoint, str_externalAPI2, "ID", 1);
 		
 		
 		contextFuseAPI.stop();
