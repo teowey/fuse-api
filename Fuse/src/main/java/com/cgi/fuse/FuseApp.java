@@ -39,10 +39,12 @@ public class FuseApp {
 		
 		String quoteAPIEndpoint = "direct:quoteAPI";	// Get Rest from external service.
 		String mapsAPIEndpoint = "direct:mapsAPI";		// Get Rest from another external service.
+		String xmlToJsonAPIEndpoint = "direct:geoXMLtoJsonAPI"; // Get Rest from xml API
 		
 		Object externalAPI1 = template.requestBody(quoteAPIEndpoint, null, String.class);
 		Object externalAPI2 = template.requestBody(mapsAPIEndpoint, null, String.class);
-
+		template.requestBody(xmlToJsonAPIEndpoint, null, String.class);
+		
 		// Create an exchange object to manipulate the messages.
 		Exchange exchange = new DefaultExchange(contextFuseAPI);
 		
@@ -55,8 +57,7 @@ public class FuseApp {
 		// Send the converted APIs to the 'mergeAPI' route to be merged into a file.
 		template.sendBodyAndHeader(mergeAPIEndpoint, str_externalAPI1, "ID", 1);
 		template.sendBodyAndHeader(mergeAPIEndpoint, str_externalAPI2, "ID", 1);
-		
-		
+
 		contextFuseAPI.stop();
 		
 		

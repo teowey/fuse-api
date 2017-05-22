@@ -17,6 +17,7 @@ import org.apache.camel.builder.RouteBuilder;
 
 public class FuseAPIRoute extends RouteBuilder {
 
+		
 	@Override
 	public void configure() throws Exception {		
 	
@@ -28,19 +29,39 @@ public class FuseAPIRoute extends RouteBuilder {
 		 */		
 		
 		// 1st API route		
-		from("direct:getRestFromExternalService")
+		from("direct:quoteAPI")
 		.removeHeaders("*")
 		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
 		.to("jetty:http://gturnquist-quoters.cfapps.io/api/random")
 		.to("file:src/data?noop=true&fileName=quoteapi.json");
 		
 		// 2nd API route
-		from("direct:getAnotherRestFromExternalService")
+		from("direct:mapsAPI")
 		.removeHeaders("*")
 		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
 		.to("jetty:http://maps.googleapis.com/maps/api/geocode/json?address=stockholm,sweden")
-		.to("file:src/data?noop=true&fileName=geoapi.json");
+		.to("file:src/data?noop=true&fileName=mapsapi.json");
 	
+		
+		
+		// XML to JSON route.
+		/*
+		 * Route to get XML API 
+		 * Write the resulting JSON file in the data folder with the 
+		 * other JSON API files.
+		 */
+		from("direct:testXMLgeoAPI")
+		.removeHeaders("*")
+		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
+		.to("http://api.geonames.org/weatherIcao?ICAO=LSZH&username=rheh&style=full")
+		.to("direct:marshalAPI");
+		
+		// XML to JSON conversion using transformation pattern 'marshal' component.
+		from("direct:marshalAPI")
+		.marshal().xmljson()
+		.to("file:src/data?noop=true&fileName=testxmlapi.json");
+		
+		
 		/*
 		 *  - Filter to organize different APIs 
 		 * 
