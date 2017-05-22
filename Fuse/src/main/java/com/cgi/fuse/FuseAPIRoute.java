@@ -50,7 +50,7 @@ public class FuseAPIRoute extends RouteBuilder {
 		 * Write the resulting JSON file in the data folder with the 
 		 * other JSON API files.
 		 */
-		from("direct:testXMLgeoAPI")
+		from("direct:geoXMLtoJsonAPI")
 		.removeHeaders("*")
 		.setHeader(Exchange.HTTP_METHOD, simple("GET"))
 		.to("http://api.geonames.org/weatherIcao?ICAO=LSZH&username=rheh&style=full")
